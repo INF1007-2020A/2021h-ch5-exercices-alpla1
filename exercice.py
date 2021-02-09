@@ -60,7 +60,7 @@ def verify_ages(groups: List[List[int]]) -> List[bool]:
             etat_groupes[i] = False
         elif 10 < len(groups[i]):
             etat_groupes[i] = False
-# critères d'âge
+#critères d'âge
         elif 25 in groups[i]:
             pass
         else:
