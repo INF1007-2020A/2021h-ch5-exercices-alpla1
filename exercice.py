@@ -32,6 +32,7 @@ def prime_integer_summation() -> int:
             sum += number
         count += 1
     return sum
+    #faux rep: 24133
 
 
 def factorial(number: int) -> int:
