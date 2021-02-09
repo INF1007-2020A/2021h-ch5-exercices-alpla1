@@ -6,30 +6,74 @@ from typing import List
 
 
 def convert_to_absolute(number: float) -> float:
-    return 0
-
+    if number < 0:
+     number = -number
+    return number
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
-
-    return [""]
+    liste_nom = []
+    for pre in prefixes:
+        liste_nom.append(pre + suffixe)
+    return liste_nom
 
 
 def prime_integer_summation() -> int:
-    return 0
+    sum = 0
+    number = 2
+    count = 0
+    while count < 100:
+        i = 2
+        if i == number:
+            sum += number
+        while i < number:
+            if number % i !=0:
+                i += 1
+            sum += number
+        count += 1
+    return sum
 
 
 def factorial(number: int) -> int:
-    return 0
+    i = 1
+    fact = 1
+    while i <= number:
+        fact = fact * i
+        i += 1
+    return fact
 
 
 def use_continue() -> None:
-    pass
+    x = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    for i in range(0, len(x)):
+        if x[i] == 5:
+            continue
+        print(x[i])
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
-
+    etat_groupes = [True] * len(groups)
+#critère de taille
+    i = 0
+    while i < len(groups):
+        if 4 > len(groups[i]):
+            etat_groupes[i] = False
+        elif 10 < len(groups[i]):
+            etat_groupes[i] = False
+# critères d'âge
+        elif 25 in groups[i]:
+            pass
+        else:
+            x = 0
+            while x < len(groups[i]) and etat_groupes[i] is True:
+                if 18 > groups[i][x]:
+                    etat_groupes[i] = False
+                if 50 in groups[i]:
+                    if groups[i][x] > 70:
+                        etat_groupes[i] = False
+                x += 1
+        i += 1
+    return etat_groupes
 
 def main() -> None:
     number = -4.325
